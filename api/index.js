@@ -5,9 +5,20 @@ let isConnected = false;
 
 module.exports = async (req, res) => {
   if (!isConnected) {
-    await mongoose.connect(process.env.MONGODB_URI, { maxPoolSize: 10 });
-    isConnected = true;
-    console.log('✅ Mongoose connected (Vercel)');
+    try {
+      await mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        serverSelectionTimeoutMS: 30000, 
+        maxPoolSize: 10
+      });
+      isConnected = true;
+      console.log('✅ MongoDB connected (Vercel)');
+    } catch (err) {
+      console.error('❌ MongoDB connection error:', err);
+      return res.status(500).json({ error: 'Database connection failed' });
+    }
   }
+
   return app(req, res);
 };

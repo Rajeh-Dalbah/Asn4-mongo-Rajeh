@@ -7,8 +7,6 @@ const Movie = require('./models/movie');
 const app = express();
 const port = process.env.PORT || 8000;
 
-connectDB();
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
