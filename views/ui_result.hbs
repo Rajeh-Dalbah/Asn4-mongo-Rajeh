@@ -1,0 +1,20 @@
+<section>
+  {{#if created}}
+    <h2>Movie created </h2>
+  {{else}}
+    <h2>Result</h2>
+  {{/if}}
+
+  {{#if notFound}}
+    <p class="error">No movie found for <b>{{keyType}}</b> = <code>{{keyValue}}</code></p>
+  {{else}}
+    <div class="card">
+      <p><b>_id:</b> {{movie._id}}</p>
+      <p><b>Movie_ID:</b> {{movie.Movie_ID}}</p>
+      <p><b>Title:</b> {{movie.Title}}</p>
+      <p><b>Released:</b> {{movie.Released}}</p>
+    </div>
+  {{/if}}
+
+  <p><a href="/ui">Back</a></p>
+</section>

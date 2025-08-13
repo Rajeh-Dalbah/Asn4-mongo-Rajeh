@@ -1,0 +1,19 @@
+<section>
+  <h2>Find a Movie</h2>
+  <form method="post" action="/ui/movie/show" class="card">
+    <label>
+      Key type
+      <select name="keyType" required>
+        <option value="mongo">_id (Mongo ObjectId)</option>
+        <option value="movieId">Movie_ID (number)</option>
+      </select>
+    </label>
+
+    <label>
+      Value
+      <input type="text" name="keyValue" placeholder="e.g. 689cdc32838cb1025ed92641 or 1001" required />
+    </label>
+
+    <button type="submit">Show</button>
+  </form>
+</section>

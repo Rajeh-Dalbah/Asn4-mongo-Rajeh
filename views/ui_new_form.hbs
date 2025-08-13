@@ -1,0 +1,21 @@
+<section>
+  <h2>Add Movie</h2>
+  <form method="post" action="/ui/movie/new" class="card">
+    <label>
+      Movie_ID (optional)
+      <input type="number" name="Movie_ID" min="1" />
+    </label>
+
+    <label>
+      Title
+      <input type="text" name="Title" required />
+    </label>
+
+    <label>
+      Released (optional)
+      <input type="text" name="Released" placeholder="YYYY-MM-DD / any text" />
+    </label>
+
+    <button type="submit">Create</button>
+  </form>
+</section>

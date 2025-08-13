@@ -1,0 +1,17 @@
+{
+  "name": "asn4-mongo-rajeh",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "vercel-build": "echo no-build"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^8.0.3",
+    "express-validator": "^6.14.2",
+    "mongoose": "^6.7.2",
+    "serverless-http": "^3.2.0"
+  }
+}
