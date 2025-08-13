@@ -43,9 +43,9 @@ async function connectDB() {
       serverSelectionTimeoutMS: 30000
     });
     isConnected = true;
-    console.log('✅ MongoDB connected:', mongoose.connection.name);
+    console.log(' MongoDB connected:', mongoose.connection.name);
   } catch (err) {
-    console.error('❌ MongoDB connection error:', err.message);
+    console.error(' MongoDB connection error:', err.message);
     throw err;
   }
 }
@@ -216,6 +216,6 @@ module.exports = app;
 if (process.env.NODE_ENV !== 'production') {
   const port = process.env.PORT || 8000;
   connectDB().then(() => {
-    app.listen(port, () => console.log(`🚀 Server running on http://localhost:${port}`));
+    app.listen(port, () => console.log(` Server running on http://localhost:${port}`));
   });
 }
